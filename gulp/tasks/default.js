@@ -10,3 +10,12 @@ gulp.task('default', () => {
 		'watch'
 		);
 });
+
+gulp.task('build', ['del'], function() {
+	gulp.start(
+		'styles',
+		'jade',
+		'scripts'
+		// 'copy'
+	);
+});
