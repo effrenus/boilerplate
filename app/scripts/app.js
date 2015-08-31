@@ -2,7 +2,7 @@ import React from 'react';
 
 class Example extends React.Component {
 	render() {
-		return <b>This is example</b>;
+		return <b>This is example!!!!!</b>;
 	}
 }
 

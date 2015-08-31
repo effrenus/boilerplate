@@ -7,10 +7,9 @@ import errorHandler from '../errorHandler';
 import browserSync from 'browser-sync';
 
 gulp.task('jade', () => {
-
-	gulp
+	return gulp
 		.src('app/templates/*.jade')
-		.pipe(plumber({errorHandler: errorHandler}))
+		.pipe(plumber({errorHandler}))
 		.pipe(gulpif(global.watch, inheritance({basedir: 'app/templates'})))
 		.pipe(jade())
 		.pipe(gulp.dest('dist'))
