@@ -3,7 +3,7 @@ import webpack from 'webpack';
 
 const JS_REGEX = /\.js$|\.jsx$|\.es6$|\.babel$/;
 
-const IS_PRODUCTION = 'production' === process.env.NODE_ENV;
+const IS_PRODUCTION = process.env.NODE_ENV === 'production';
 
 let config = {
 
@@ -11,27 +11,27 @@ let config = {
 
 	output: {
 		path: path.join(__dirname, 'dist/scripts'),
-		filename: 'bundle.js'
+		filename: 'bundle.js',
 	},
 
 	plugins: [
-		new webpack.NoErrorsPlugin()
+		new webpack.NoErrorsPlugin(),
 	],
 
 	resolve: {
 		modulesDirectories: ['node_modules', 'app/scripts'],
-		extensions: ['', '.js', '.jsx']
+		extensions: ['', '.js', '.jsx'],
 	},
 
 	module: {
 		loaders: [
-			{ test: JS_REGEX, exclude: /node_modules/, loader: 'babel'}
+			{ test: JS_REGEX, exclude: /node_modules/, loader: 'babel'},
 		],
 
-		noParse: /\.min\.js/
-	}
+		noParse: /\.min\.js/,
+	},
 
-}
+};
 
 if (IS_PRODUCTION) {
 	config.devtool = 'source-map';

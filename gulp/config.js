@@ -1,4 +1,8 @@
 export default {
-	dist: "dist",
-	images: "dist/images",
-}
+	dist: {
+		path: 'dist',
+		images: 'dist/images',
+		scripts: 'dist/scripts',
+		templates: 'dist',
+	},
+};
