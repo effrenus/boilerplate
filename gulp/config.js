@@ -1,8 +1,7 @@
 export default {
-	dist: {
-		path: 'dist',
-		images: 'dist/images',
-		scripts: 'dist/scripts',
-		templates: 'dist',
-	},
+	dist: 'dist',
+	images: 'dist/pic/design',
+	styles: 'dist/css',
+	scripts: 'dist/jscripts',
+	fonts: 'dist/flib/fonts'
 };

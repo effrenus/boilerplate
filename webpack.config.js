@@ -36,7 +36,6 @@ let config = {
 if (IS_PRODUCTION) {
 	config.devtool = 'source-map';
 	config.plugins.push(
-		new webpack.optimize.UglifyJsPlugin(),
 		new webpack.optimize.DedupePlugin()
 	);
 }

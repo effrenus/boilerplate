@@ -1,15 +1,26 @@
 import gulp from 'gulp';
+import imagemin from 'gulp-imagemin';
+import config from '../config';
 
 gulp.task('copy:fonts', () => {
-	gulp
+	return gulp
 		.src('app/fonts/*')
-		.pipe(gulp.dest('dist/fonts'));
+		.pipe(gulp.dest(config.fonts));
+});
+
+gulp.task('copy:images', () => {
+	return gulp
+		.src('app/images/*.{png,jpg,gif,svg}')
+		.pipe(imagemin({
+			optimizationLevel: 3,
+		}))
+		.pipe(gulp.dest(config.images));
 });
 
 gulp.task('copy:js', () => {
-	gulp
+	return gulp
 		.src('app/scripts/libs/*')
 		.pipe(gulp.dest('dist/scripts/libs'));
 });
 
-gulp.task('copy', ['copy:fonts', 'copy:js']);
+gulp.task('copy', ['copy:fonts', 'copy:images']);

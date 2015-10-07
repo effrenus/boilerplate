@@ -6,7 +6,6 @@
     "react/react-in-jsx-scope": 2,
     "indent": [2, "tab"],
 
-    //Temporarirly disabled due to a possible bug in babel-eslint (todomvc example)
     "block-scoped-var": 0,
   }
 }
