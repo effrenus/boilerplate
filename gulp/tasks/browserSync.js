@@ -7,10 +7,14 @@ gulp.task('browserSync', () => {
 		port: 8080,
 		server: {
 			baseDir: [
-				'dist'
+				'dist',
 			],
-			directory: true
+			directory: true,
 		},
-		open: false
+		open: true,
+		ui: false,
+		online: false,
+		notify: false,
+		minify: false,
 	});
 });
